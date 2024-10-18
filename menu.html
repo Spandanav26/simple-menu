@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu - Add or Multiply</title>
+</head>
+<body>
+
+<h2>Menu</h2>
+<p>
+    1. Add<br>
+    2. Multiply<br>
+</p>
+
+<label for="choice">Enter your choice (1 or 2): </label>
+<input type="number" id="choice" min="1" max="2"><br><br>
+
+<label for="num1">Enter the first number: </label>
+<input type="number" id="num1"><br><br>
+
+<label for="num2">Enter the second number: </label>
+<input type="number" id="num2"><br><br>
+
+<button onclick="performOperation()">Submit</button>
+
+<h3 id="result"></h3>
+
+<script>
+function performOperation() {
+    const choice = document.getElementById("choice").value;
+    const num1 = parseFloat(document.getElementById("num1").value);
+    const num2 = parseFloat(document.getElementById("num2").value);
+    let result = '';
+
+    if (choice == '1') {
+        result = `The sum of ${num1} and ${num2} is: ${num1 + num2}`;
+    } else if (choice == '2') {
+        result = `The product of ${num1} and ${num2} is: ${num1 * num2}`;
+    } else {
+        result = "Invalid choice! Please enter 1 or 2.";
+    }
+
+    document.getElementById("result").innerHTML = result;
+}
+</script>
+
+</body>
+</html>
